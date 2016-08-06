@@ -9,6 +9,9 @@ echo Now installing [[[[ PUT SOMETHING MEANINGFUL HERE ]]]]
 Powershell.exe -NonInteractive -command "Set-ExecutionPolicy Unrestricted"
 Powershell.exe -NonInteractive -command "%directoryOfThisScript%[[[[[[[[NAME OF POWERSHELL SCRIPT TO EXECUTE]]]]]].ps1"
 
+@REM if you need to copy files into c:\windows\system32, use the 'sysnative' virtual directory as in the below example.
+copy /Y "%directoryOfThisScript%SysinternalsSuite\*" "%SystemRoot%\Sysnative\"
+
 echo.
 echo This window will close in 20 seconds...
 timeout /t 20 >nul
