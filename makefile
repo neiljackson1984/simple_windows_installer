@@ -21,6 +21,7 @@ build/contents.7z : ${deployableFiles}
 	cd deployment && 7z a -r "$(abspath ${tempArchive})" *
 
 ${sfxConfigFile} : makefile
+	mkdir --parents build
 	echo \;\!\@Install\@\!UTF-8\! > ${sfxConfigFile}
 	echo Title=\"${projectName}\" >> ${sfxConfigFile}
 	echo GUIMode=\"1\" >> ${sfxConfigFile}
